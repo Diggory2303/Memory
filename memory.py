@@ -1,22 +1,42 @@
-from random import *
-from turtle import *
+"""
+Juego: Memory
+Programador 1: Annya Paulina Verduzco Meza / A01650668
+Programador 2: Diego Isunza Garciacano / A01652067
+Fecha: 10 / mayo / 2022
+"""
 
+from random import *
+from tkinter import CENTER
+from turtle import *
+"""se agrego counter"""
+from typing import Counter 
 from freegames import path
+
 
 car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
 Clicks = 0
-pares = 0
+completado = 0
+colores = ['#FFEBEE', '#F8BBD0', '#E1BEE7',  '#D1C4E9', '#C5CAE9', 
+	   '#BBDEFB', '#B3E5FC', '#B2EBF2', '#B2DFDB', '#C8E6C9',
+	   '#DCEDC8', '#EA6FA6', '#FFF9C4', '#FFECB3', '#FFE0B2',
+	   '#FFCCBC', '#D7CCC8', '#B0FF33', '#D81B60', '#8E24AA',
+	   '#33FFBD', '#3949AB', '#1E88E5', '#039BE5', '#00ACC1',
+	   '#33F1FF', '#EA6FD6', '#7CB342', '#C0CA33', '#7DEA6F',
+	   '#6F83EA', '#EA6F80', '#F4511E']
+       #lista de colores 
 
 
-def square(x, y):
+
+
+def square(x, y, txt):
     """Draw white square with black outline at (x, y)."""
     up()
     goto(x, y)
     down()
-    color('black', 'white')
+    color('black', txt)
     begin_fill()
     for count in range(4):
         forward(50)
@@ -64,16 +84,18 @@ def draw():
     for count in range(64):
         if hide[count]:
             x, y = xy(count)
-            square(x, y)
+            square(x, y, 'white')
 
     mark = state['mark']
 
+#centrar el numero en el recuadro 
     if mark is not None and hide[mark]:
         x, y = xy(mark)
+        square(x, y, colores[tiles[mark]])#añadir colores a las tiles
         up()
-        goto(x + 2, y)
+        goto(x + 27, y)
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        write(tiles[mark], font=('Arial', 30, 'normal'), align='center')
 
     penup()
     goto(-200,200)
