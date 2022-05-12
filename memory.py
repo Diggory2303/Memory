@@ -7,9 +7,7 @@ Fecha: 10 / mayo / 2022
 
 from random import *
 from tkinter import CENTER
-from turtle import *
-"""se agrego counter"""
-from typing import Counter 
+from turtle import * 
 from freegames import path
 
 
@@ -24,7 +22,7 @@ colores = ['#FFEBEE', '#F8BBD0', '#E1BEE7',  '#D1C4E9', '#C5CAE9',
 	   '#DCEDC8', '#EA6FA6', '#FFF9C4', '#FFECB3', '#FFE0B2',
 	   '#FFCCBC', '#D7CCC8', '#B0FF33', '#D81B60', '#8E24AA',
 	   '#33FFBD', '#3949AB', '#1E88E5', '#039BE5', '#00ACC1',
-	   '#33F1FF', '#EA6FD6', '#7CB342', '#C0CA33', '#7DEA6F',
+	   '#33F1FF', '#EA6FD6', '#7CB342', '#C5DA73', '#7DEA6F',
 	   '#6F83EA', '#EA6F80', '#F4511E']
        #lista de colores 
 
